@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+import dns
+import dns.resolver
+
+# Consulta de varios registros de DNS
+
+# Registros IPv4(A)
+ansA = dns.resolver.query('google.com', 'A')
+# Registros IPv6(AAAA)
+ansAAAA = dns.resolver.query('google.com', 'AAAA')
+# Registros NameServers(NS)
+ansNS = dns.resolver.query('google.com', 'NS')
+# Registros MailServers(A)
+ansMX = dns.resolver.query('google.com', 'MX')
+
+print(ansA.response.to_text())
+print(ansAAAA.response.to_text())
+print(ansNS.response.to_text())
+print(ansMX.response.to_text())

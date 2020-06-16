@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+import dns.query
+import dns.zone
+
+zone = dns.zone.from_xfr(dns.query.xfr('IP_Dominio_anterior', 'Nuevo_domino.com'))
